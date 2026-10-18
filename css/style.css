@@ -782,3 +782,11 @@ p, li, dd, summary { text-wrap: pretty; }
 .field textarea { min-height: 150px; line-height: 1.6; }
 .field [aria-invalid="true"] { border-color: #9b2c20; box-shadow: 0 0 0 3px rgb(155 44 32 / 10%); }
 .field input[type="date"] { color: var(--ink); }
+
+/* Första kategorin på sortimentssidan: mörk, som första avsnittet på Presentkorgar */
+.category-dark { background: var(--ink); color: rgb(248 244 238 / 82%); }
+.category-dark h2 { color: var(--ivory); }
+.category-dark h2 em { color: #e6d3b1; }
+.category-dark .label { color: #d6bf97; }
+.category-dark .category-copy > p:not(.label) { color: rgb(248 244 238 / 80%); }
+.category-dark + .category { padding-top: var(--section-y); }
