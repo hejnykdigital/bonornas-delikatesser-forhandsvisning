@@ -78,38 +78,59 @@
     mapBtn.replaceWith(iframe);
   });
 
-  // Förvalt ämne via länk, till exempel kontakt.html?amne=presentkorg
-  const subject = document.getElementById('f-subject');
-  if (subject && new URLSearchParams(location.search).get('amne') === 'presentkorg') subject.value = 'Beställa en presentkorg';
-
-  // Kontaktformulär med validering, skickas via mejlprogrammet
+  // Kontaktformulär: ämnesknappar, tips i meddelanderutan och datum vid presenter
   const form = document.getElementById('contact-form');
-  const status = form?.querySelector('.form-status');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let firstInvalid = null;
-    form.querySelectorAll('[required]').forEach((field) => {
-      const ok = field.checkValidity() && field.value.trim() !== '';
-      field.setAttribute('aria-invalid', String(!ok));
-      if (!ok && !firstInvalid) firstInvalid = field;
-    });
-    if (firstInvalid) {
-      status.textContent = 'Fyll i alla fält med giltiga uppgifter.';
-      status.className = 'form-status field-full is-error';
-      firstInvalid.focus();
-      return;
+  if (form) {
+    const status = form.querySelector('.form-status');
+    const topics = [...form.querySelectorAll('input[name="amne"]')];
+    const message = form.querySelector('#f-message');
+    const dateField = form.querySelector('.field-date');
+    const topicBox = form.querySelector('.topic');
+
+    const onTopic = () => {
+      const chosen = topics.find((t) => t.checked);
+      if (!chosen) return;
+      message.placeholder = chosen.dataset.hint;
+      dateField.hidden = !chosen.dataset.date;
+      topicBox.classList.remove('is-invalid');
+    };
+    topics.forEach((t) => t.addEventListener('change', onTopic));
+
+    // Förvalt ämne via länk, till exempel kontakt.html?amne=presentkorg
+    if (new URLSearchParams(location.search).get('amne') === 'presentkorg') {
+      topics[0].checked = true;
+      onTopic();
     }
-    const d = new FormData(form);
-    const body = `${d.get('meddelande')}\n\nHälsningar ${d.get('namn')}\n${d.get('epost')}`;
-    window.location.href = 'mailto:info@bonornasdelikatesser.se'
-      + '?subject=' + encodeURIComponent(`${d.get('amne')} via hemsidan`)
-      + '&body=' + encodeURIComponent(body);
-    status.textContent = 'Tack! Ditt mejlprogram öppnas nu med meddelandet ifyllt.';
-    status.className = 'form-status field-full is-ok';
-  });
-  form?.addEventListener('input', (e) => {
-    if (e.target.getAttribute('aria-invalid') === 'true' && e.target.checkValidity()) e.target.setAttribute('aria-invalid', 'false');
-  });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let firstInvalid = null;
+      if (!topics.some((t) => t.checked)) { topicBox.classList.add('is-invalid'); firstInvalid = topics[0]; }
+      form.querySelectorAll('input[required]:not([type="radio"]), textarea[required]').forEach((field) => {
+        const ok = field.checkValidity() && field.value.trim() !== '';
+        field.setAttribute('aria-invalid', String(!ok));
+        if (!ok && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) {
+        status.textContent = 'Hoppsan, något saknas. Fyll i de markerade fälten så är du nästan klar.';
+        status.className = 'form-status field-full is-error';
+        firstInvalid.focus();
+        return;
+      }
+      const d = new FormData(form);
+      const rows = [d.get('meddelande'), '', `Hälsningar ${d.get('namn')}`, d.get('epost')];
+      if (d.get('telefon')) rows.push(`Telefon: ${d.get('telefon')}`);
+      if (!dateField.hidden && d.get('datum')) rows.push(`Önskat datum: ${d.get('datum')}`);
+      window.location.href = 'mailto:info@bonornasdelikatesser.se'
+        + '?subject=' + encodeURIComponent(`${d.get('amne')} via hemsidan`)
+        + '&body=' + encodeURIComponent(rows.join('\n'));
+      status.textContent = 'Tack! Nu öppnas ditt mejlprogram, tryck bara på skicka. Vi ser fram emot att läsa.';
+      status.className = 'form-status field-full is-ok';
+    });
+    form.addEventListener('input', (e) => {
+      if (e.target.getAttribute('aria-invalid') === 'true' && e.target.checkValidity()) e.target.setAttribute('aria-invalid', 'false');
+    });
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

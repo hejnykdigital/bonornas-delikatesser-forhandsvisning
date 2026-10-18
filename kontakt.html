@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300..500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=15">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,7 +124,7 @@
         <div class="visit-copy">
           <p class="label">Hitta hit</p>
           <h2 id="besok-title">Butiken på <em>Bagaregatan</em></h2>
-          <p class="visit-intro">Butiken ligger mitt i Nyköping. Håll utkik efter markisen och skylten där det står Öppet, välkommen!</p>
+          <p class="visit-intro">Mitt i Nyköpings stadskärna. Håll utkik efter markisen och skylten där det står Öppet, välkommen!</p>
           <address>
             <dl class="info-list">
               <div><dt>Adress</dt><dd>Bagaregatan 31C<br>611 30 Nyköping</dd></div>
@@ -148,38 +148,46 @@
     <section class="section contact" id="kontakt" aria-labelledby="kontakt-title">
       <div class="container contact-grid">
         <header class="section-head section-head-left">
-          <p class="label">Kontakt</p>
-          <h2 id="kontakt-title">Skriv <em>till oss</em></h2>
-          <p>Vill du beställa en presentkorg, fråga om en vara eller bara säga hej? Skriv några rader, så återkommer vi så snart vi kan.</p>
+          <p class="label">Skriv till oss</p>
+          <h2 id="kontakt-title">Vad är du <em>sugen på?</em></h2>
+          <p>Berätta vad du letar efter, så hjälper vi dig att hitta precis rätt. Ju mer du berättar, desto bättre kan vi tipsa.</p>
+          <p class="contact-alt">Hellre prata direkt? Ring oss på <a href="tel:+46155214440">0155 21 44 40</a>.</p>
         </header>
 
         <form class="contact-form" id="contact-form" action="mailto:info@bonornasdelikatesser.se" method="post" enctype="text/plain" novalidate>
+          <fieldset class="field field-full topic">
+            <legend>Vad gäller det?</legend>
+            <div class="topic-list">
+              <label class="topic-option"><input type="radio" name="amne" value="En presentkorg" data-hint="Vem är presenten till, vad tycker hen om och ungefär vad vill du lägga?" data-date="1" required><span>En presentkorg</span></label>
+              <label class="topic-option"><input type="radio" name="amne" value="Något ur sortimentet" data-hint="Vad letar du efter? Ett speciellt te, en ost eller något helt annat?"><span>Något ur sortimentet</span></label>
+              <label class="topic-option"><input type="radio" name="amne" value="Företagsgåvor" data-hint="Hur många gåvor behöver ni, till när och ungefär vilken budget?" data-date="1"><span>Företagsgåvor</span></label>
+              <label class="topic-option"><input type="radio" name="amne" value="Bara säga hej" data-hint="Skriv vad du vill, vi blir glada!"><span>Bara säga hej</span></label>
+            </div>
+          </fieldset>
           <div class="field">
-            <label for="f-name">Namn</label>
+            <label for="f-name">Vad heter du?</label>
             <input id="f-name" name="namn" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="f-email">Mejladress</label>
+            <label for="f-email">Din mejladress</label>
             <input id="f-email" name="epost" type="email" autocomplete="email" inputmode="email" required>
           </div>
-          <div class="field field-full">
-            <label for="f-subject">Ämne</label>
-            <select id="f-subject" name="amne" required>
-              <option value="">Välj ämne</option>
-              <option>Beställa en presentkorg</option>
-              <option>Fråga om sortimentet</option>
-              <option>Företagsgåvor</option>
-              <option>Övrigt</option>
-            </select>
+          <div class="field">
+            <label for="f-phone">Telefon <span class="optional">valfritt</span></label>
+            <input id="f-phone" name="telefon" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field field-date" hidden>
+            <label for="f-date">Önskat datum <span class="optional">valfritt</span></label>
+            <input id="f-date" name="datum" type="date">
           </div>
           <div class="field field-full">
-            <label for="f-message">Meddelande</label>
-            <textarea id="f-message" name="meddelande" rows="4" required></textarea>
+            <label for="f-message">Ditt meddelande</label>
+            <textarea id="f-message" name="meddelande" rows="5" required placeholder="Välj vad det gäller ovan, så ger vi dig ett tips på vägen."></textarea>
           </div>
           <p class="form-status field-full" role="status" aria-live="polite"></p>
           <div class="form-foot field-full">
-            <p class="form-note">Alla fält behöver fyllas i. När du skickar öppnas ditt mejlprogram med meddelandet färdigt.</p>
-            <button class="btn" type="submit">Skicka meddelande</button>
+            <p class="form-note">Ditt mejlprogram öppnas med meddelandet färdigt att skicka.</p>
+            <button class="btn" type="submit">Skicka till Bönornas</button>
           </div>
         </form>
       </div>
@@ -258,6 +266,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=11" defer></script>
+  <script src="js/main.js?v=15" defer></script>
 </body>
 </html>

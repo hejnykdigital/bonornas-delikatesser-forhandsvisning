@@ -711,3 +711,29 @@ p, li, dd, summary { text-wrap: pretty; }
     background: linear-gradient(180deg, rgb(18 13 10 / 68%) 0%, rgb(18 13 10 / 62%) 35%, rgb(18 13 10 / 80%) 70%, rgb(18 13 10 / 92%) 100%);
   }
 }
+
+/* ---------- Kontaktformulär: ämnesknappar ---------- */
+.contact-alt { margin-top: 20px; color: var(--muted); }
+.contact-alt a { color: var(--ink); }
+.topic { border: 0; margin: 0; padding: 0; min-width: 0; }
+.topic legend { padding: 0; margin-bottom: 14px; font-size: .72rem; font-weight: 400; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-text); }
+.topic-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.topic-option { position: relative; cursor: pointer; }
+.topic-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.topic-option span {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px;
+  border: 1px solid rgb(29 22 18 / 25%); border-radius: 999px; background: var(--ivory);
+  font-family: var(--serif); font-size: 1.15rem; color: var(--ink);
+  transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+}
+.topic-option:hover span { border-color: var(--ink); }
+.topic-option input:checked + span { background: var(--roast); border-color: var(--roast); color: var(--ivory); }
+.topic-option input:focus-visible + span { outline: 1px solid var(--gold); outline-offset: 3px; }
+.topic.is-invalid .topic-option span { border-color: #9b2c20; }
+.optional { margin-left: 6px; font-size: .62rem; letter-spacing: .14em; color: var(--muted); text-transform: none; font-style: italic; font-family: var(--serif); font-size: .95rem; letter-spacing: 0; }
+.field textarea::placeholder { color: rgb(100 87 77 / 75%); font-style: italic; }
+.field-date[hidden] { display: none; }
+@media (max-width: 560px) { .topic-option { flex: 1 1 calc(50% - 10px); } .topic-option span { width: 100%; justify-content: center; text-align: center; padding: 8px 14px; } }
+.field .topic-option { font-size: inherit; font-weight: 400; letter-spacing: 0; text-transform: none; color: inherit; }
+@media (max-width: 560px) { .topic-option span { min-height: 48px; padding: 0 8px; font-size: 1.02rem; white-space: nowrap; } }
+@media (max-width: 360px) { .topic-option span { white-space: normal; line-height: 1.2; padding: 6px 8px; } }
