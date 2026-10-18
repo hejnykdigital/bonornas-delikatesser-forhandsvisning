@@ -917,3 +917,8 @@ p, li, dd, summary { text-wrap: pretty; }
 .faq-light summary::before, .faq-light summary::after { background: var(--ink); }
 .faq-light details p { color: var(--muted); }
 .faq-light details p a { color: var(--ink); }
+
+/* Om oss: Jessicas avsnitt på linne, så att det inte blir ett glapp mellan två ljusa avsnitt */
+.story-section { background: var(--linen); }
+.story-section .timeline li::before { background: var(--linen); }
+.story-section .timeline li:last-child::before { background: var(--gold); }
