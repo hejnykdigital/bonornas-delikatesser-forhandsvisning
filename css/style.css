@@ -794,3 +794,5 @@ p, li, dd, summary { text-wrap: pretty; }
 /* Kaffesmaker och ostpåsar med fast bakgrundsbild */
 .menu-section.photo-section { background: none; }
 .menu-section.photo-section .menu-card { box-shadow: 0 40px 80px -30px rgb(0 0 0 / 65%); }
+.category-brown { background: var(--roast); }
+.category.category-dark { padding-top: var(--section-y); }
