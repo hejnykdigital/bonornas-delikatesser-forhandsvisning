@@ -696,3 +696,18 @@ p, li, dd, summary { text-wrap: pretty; }
 /* Kaffe och ostpåsar på sortimentssidan: ljus bakgrund före den mörka sidfoten */
 .menu-section { background: var(--linen); }
 .menu-section .menu-card { box-shadow: none; }
+
+/* Starkare filter på startbilden för bättre läsbarhet */
+.hero-media::after {
+  background:
+    linear-gradient(90deg, rgb(18 13 10 / 88%) 0%, rgb(18 13 10 / 74%) 40%, rgb(18 13 10 / 45%) 72%, rgb(18 13 10 / 30%) 100%),
+    linear-gradient(180deg, rgb(18 13 10 / 55%) 0%, rgb(18 13 10 / 0%) 25%, rgb(18 13 10 / 0%) 60%, rgb(18 13 10 / 80%) 100%),
+    rgb(18 13 10 / 25%);
+}
+.hero h1, .hero .label { text-shadow: 0 2px 4px rgb(0 0 0 / 35%), 0 0 40px rgb(0 0 0 / 35%); }
+.hero-lead { color: rgb(248 244 238 / 96%); text-shadow: 0 1px 3px rgb(0 0 0 / 50%); }
+@media (max-width: 760px) {
+  .hero-media::after {
+    background: linear-gradient(180deg, rgb(18 13 10 / 68%) 0%, rgb(18 13 10 / 62%) 35%, rgb(18 13 10 / 80%) 70%, rgb(18 13 10 / 92%) 100%);
+  }
+}
