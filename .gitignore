@@ -1,0 +1,6 @@
+# Originalbilder i full upplösning (laddas inte upp till webbservern)
+_originalbilder-ladda-ej-upp/
+
+# Systemfiler
+.DS_Store
+.claude/
