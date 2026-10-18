@@ -763,3 +763,22 @@ p, li, dd, summary { text-wrap: pretty; }
 /* Första avsnittet på en sida utan sidrubrik */
 .page-first { padding-top: calc(var(--header-h) + clamp(56px, 8vw, 104px)); }
 .visit h1 { font-size: clamp(2.4rem, 1.5rem + 3.2vw, 4.2rem); }
+
+/* ---------- Formulärfält som ljusa rutor ---------- */
+.contact-form { gap: 28px 24px; }
+.field { gap: 10px; }
+.field input, .field select, .field textarea {
+  min-height: 54px; padding: 14px 18px;
+  background: var(--ivory);
+  border: 1px solid rgb(29 22 18 / 14%); border-radius: 14px;
+  box-shadow: 0 1px 2px rgb(29 22 18 / 4%);
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
+}
+.field input:hover, .field textarea:hover { border-color: rgb(29 22 18 / 28%); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; background: #fffdf9;
+  border-color: var(--gold); box-shadow: 0 0 0 4px rgb(179 146 95 / 18%);
+}
+.field textarea { min-height: 150px; line-height: 1.6; }
+.field [aria-invalid="true"] { border-color: #9b2c20; box-shadow: 0 0 0 3px rgb(155 44 32 / 10%); }
+.field input[type="date"] { color: var(--ink); }
