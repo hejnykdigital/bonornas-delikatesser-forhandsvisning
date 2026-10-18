@@ -827,3 +827,21 @@ p, li, dd, summary { text-wrap: pretty; }
 .tips.photo-section .brew-list dd { color: rgb(248 244 238 / 72%); }
 .tips.photo-section .tip-foot { color: #e6d3b1; }
 .tips.photo-section .section-bg::after { background: linear-gradient(180deg, rgb(18 13 10 / 88%) 0%, rgb(18 13 10 / 84%) 50%, rgb(18 13 10 / 90%) 100%); }
+
+/* ---------- Kontaktformulär med stämning: bakgrundsbild och ljust kort ---------- */
+.contact.photo-section { background: none; }
+.contact.photo-section .section-bg img { object-position: 50% 40%; }
+.contact.photo-section .section-head h2 { color: var(--ivory); }
+.contact.photo-section .section-head h2 em { color: #e6d3b1; }
+.contact.photo-section .section-head > p { color: rgb(248 244 238 / 84%); }
+.contact.photo-section .contact-alt { color: rgb(248 244 238 / 78%); }
+.contact.photo-section .contact-alt a { color: var(--ivory); text-decoration-color: rgb(214 191 151 / 70%); }
+.contact.photo-section .contact-grid { align-items: center; }
+.contact.photo-section .contact-form {
+  padding: clamp(28px, 4vw, 48px); background: var(--linen); border-radius: 28px;
+  box-shadow: 0 40px 80px -30px rgb(0 0 0 / 65%);
+}
+.contact.photo-section .contact-form .field input,
+.contact.photo-section .contact-form .field textarea { background: var(--ivory); }
+@media (max-width: 560px) { .contact.photo-section .contact-form { padding: 24px 18px; border-radius: 22px; } }
+.contact.photo-section .section-bg::after { background: linear-gradient(180deg, rgb(18 13 10 / 86%) 0%, rgb(18 13 10 / 80%) 50%, rgb(18 13 10 / 88%) 100%); }
