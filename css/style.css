@@ -845,3 +845,4 @@ p, li, dd, summary { text-wrap: pretty; }
 .contact.photo-section .contact-form .field textarea { background: var(--ivory); }
 @media (max-width: 560px) { .contact.photo-section .contact-form { padding: 24px 18px; border-radius: 22px; } }
 .contact.photo-section .section-bg::after { background: linear-gradient(180deg, rgb(18 13 10 / 86%) 0%, rgb(18 13 10 / 80%) 50%, rgb(18 13 10 / 88%) 100%); }
+.contact.photo-section .section-bg img { object-position: 50% 50%; }
