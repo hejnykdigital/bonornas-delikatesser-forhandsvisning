@@ -790,3 +790,7 @@ p, li, dd, summary { text-wrap: pretty; }
 .category-dark .label { color: #d6bf97; }
 .category-dark .category-copy > p:not(.label) { color: rgb(248 244 238 / 80%); }
 .category-dark + .category { padding-top: var(--section-y); }
+
+/* Kaffesmaker och ostpåsar med fast bakgrundsbild */
+.menu-section.photo-section { background: none; }
+.menu-section.photo-section .menu-card { box-shadow: 0 40px 80px -30px rgb(0 0 0 / 65%); }
