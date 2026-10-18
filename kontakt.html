@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300..500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=28">
+  <link rel="stylesheet" href="css/style.css?v=29">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,13 +111,47 @@
   </header>
 
   <main id="main">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="container">
-        <p class="label">Kontakt</p>
+    <section class="page-hero page-hero-photo" aria-labelledby="page-title">
+      <div class="hero-media">
+        <img src="images/kaffe-i-losvikt-1600.jpg" srcset="images/kaffe-i-losvikt-960.jpg 960w, images/kaffe-i-losvikt-1600.jpg 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high">
+      </div>
+      <div class="container page-hero-content">
+        <nav class="breadcrumb" aria-label="Du är här"><a href="./">Hem</a><span aria-hidden="true">/</span><span aria-current="page">Kontakt</span></nav>
         <h1 id="page-title">Hitta hit och <em>hör av dig</em></h1>
         <p class="page-lead">Kliv in genom dörren, slå en signal eller skriv några rader. Hur du än hör av dig blir vi lika glada.</p>
+        <nav class="page-toc" aria-label="Innehåll på sidan">
+          <a href="#kontakt">Skriv till oss</a>
+          <a href="#hitta-hit">Hitta hit</a>
+          <a href="#faq">Vanliga frågor</a>
+        </nav>
       </div>
     </section>
+    <!-- BESÖK -->
+    <section class="section visit" id="hitta-hit" aria-labelledby="besok-title">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <p class="label">Hitta hit</p>
+          <h2 id="besok-title">Butiken på <em>Bagaregatan</em></h2>
+          <p class="visit-intro">Mitt i Nyköpings stadskärna. Håll utkik efter markisen och skylten där det står Öppet, välkommen!</p>
+          <address>
+            <dl class="info-list">
+              <div><dt>Adress</dt><dd>Bagaregatan 31C<br>611 30 Nyköping</dd></div>
+              <div><dt>Telefon</dt><dd><a href="tel:+46155214440">0155 21 44 40</a></dd></div>
+              <div><dt>Mejl</dt><dd><a href="mailto:info@bonornasdelikatesser.se">info@bonornasdelikatesser.se</a></dd></div>
+              <div><dt>Öppettider</dt><dd>Vi lägger ut aktuella tider på <a href="https://www.facebook.com/bonornasdelikatesser/" rel="noopener" target="_blank">Facebook</a> och <a href="https://www.instagram.com/bonornasdelikatesser/" rel="noopener" target="_blank">Instagram</a></dd></div>
+            </dl>
+          </address>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bagaregatan+31C+611+30+Nyk%C3%B6ping" rel="noopener" target="_blank">Vägbeskrivning</a>
+        </div>
+        <div class="map" id="map">
+          <button class="map-consent" type="button" data-src="https://maps.google.com/maps?q=Bagaregatan%2031C%2C%20611%2030%20Nyk%C3%B6ping&amp;z=16&amp;output=embed">
+            <span class="map-title">Visa karta</span>
+            <span class="map-sub">Kartan laddas från Google Maps</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- KONTAKT -->
     <section class="section contact photo-section" id="kontakt" aria-labelledby="kontakt-title">
       <div class="section-bg" aria-hidden="true">
@@ -169,33 +203,7 @@
         </form>
       </div>
     </section>
-    <!-- BESÖK -->
-    <section class="section visit" id="hitta-hit" aria-labelledby="besok-title">
-      <div class="container visit-grid">
-        <div class="visit-copy">
-          <p class="label">Hitta hit</p>
-          <h2 id="besok-title">Butiken på <em>Bagaregatan</em></h2>
-          <p class="visit-intro">Mitt i Nyköpings stadskärna. Håll utkik efter markisen och skylten där det står Öppet, välkommen!</p>
-          <address>
-            <dl class="info-list">
-              <div><dt>Adress</dt><dd>Bagaregatan 31C<br>611 30 Nyköping</dd></div>
-              <div><dt>Telefon</dt><dd><a href="tel:+46155214440">0155 21 44 40</a></dd></div>
-              <div><dt>Mejl</dt><dd><a href="mailto:info@bonornasdelikatesser.se">info@bonornasdelikatesser.se</a></dd></div>
-              <div><dt>Öppettider</dt><dd>Vi lägger ut aktuella tider på <a href="https://www.facebook.com/bonornasdelikatesser/" rel="noopener" target="_blank">Facebook</a> och <a href="https://www.instagram.com/bonornasdelikatesser/" rel="noopener" target="_blank">Instagram</a></dd></div>
-            </dl>
-          </address>
-          <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bagaregatan+31C+611+30+Nyk%C3%B6ping" rel="noopener" target="_blank">Vägbeskrivning</a>
-        </div>
-        <div class="map" id="map">
-          <button class="map-consent" type="button" data-src="https://maps.google.com/maps?q=Bagaregatan%2031C%2C%20611%2030%20Nyk%C3%B6ping&amp;z=16&amp;output=embed">
-            <span class="map-title">Visa karta</span>
-            <span class="map-sub">Kartan laddas från Google Maps</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <section class="section faq faq-light" id="faq" aria-labelledby="faq-title">
       <div class="container faq-grid">
         <header class="section-head section-head-left">
           <p class="label">Vanliga frågor</p>
@@ -269,6 +277,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=28" defer></script>
+  <script src="js/main.js?v=29" defer></script>
 </body>
 </html>

@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300..500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=28">
+  <link rel="stylesheet" href="css/style.css?v=29">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,15 +111,22 @@
   </header>
 
   <main id="main">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="container">
-        <p class="label">Presentkorgar</p>
+    <section class="page-hero page-hero-photo" aria-labelledby="page-title">
+      <div class="hero-media">
+        <img src="images/praliner-choklad-1600.jpg" srcset="images/praliner-choklad-960.jpg 960w, images/praliner-choklad-1600.jpg 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high">
+      </div>
+      <div class="container page-hero-content">
+        <nav class="breadcrumb" aria-label="Du är här"><a href="./">Hem</a><span aria-hidden="true">/</span><span aria-current="page">Presentkorgar</span></nav>
         <h1 id="page-title">Presentkorgar <em>med omtanke</em></h1>
         <p class="page-lead">Färdiga presenter eller en korg helt efter dina önskemål. Vi hjälper dig att hitta rätt.</p>
+        <nav class="page-toc" aria-label="Innehåll på sidan">
+          <a href="kontakt.html?amne=presentkorg#kontakt">Beställ en presentkorg</a>
+          <a href="#presentfragor">Vanliga frågor</a>
+        </nav>
       </div>
     </section>
 
-    <section class="section gifts" aria-labelledby="gifts-title">
+    <section class="section gifts gifts-light" aria-labelledby="gifts-title">
       <div class="container gifts-grid">
         <figure class="gifts-media">
           <img src="images/presentkorgar-delikatesser-600.jpg"
@@ -128,7 +135,7 @@
                alt="Hyllor med franska tapenader, olivoljor och inslagna presentkorgar">
         </figure>
         <div class="gifts-copy">
-          <p class="label label-light">Så går det till</p>
+          <p class="label">Så går det till</p>
           <h2 id="gifts-title">Från idé till <em>inslagen present</em></h2>
           <p>Ska du uppvakta kollegan, tacka värdinnan eller överraska någon du tycker om? Vi har alltid färdiga presenter i olika prisklasser, från söta till matiga. Vill du ha något alldeles eget sätter vi gärna ihop en korg just för dig.</p>
           <ol class="steps">
@@ -136,7 +143,7 @@
             <li><span class="step-index">II</span><div><strong>Vi plockar ihop det goda</strong>Ost, choklad, te, kaffe och delikatesser i en fin kombination.</div></li>
             <li><span class="step-index">III</span><div><strong>Vackert inslaget</strong>Redo att ge bort, med omsorg in i minsta detalj.</div></li>
           </ol>
-          <a class="btn btn-light" href="kontakt.html?amne=presentkorg#kontakt">Beställ en presentkorg</a>
+          <a class="btn" href="kontakt.html?amne=presentkorg#kontakt">Beställ en presentkorg</a>
         </div>
       </div>
     </section>
@@ -232,6 +239,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=28" defer></script>
+  <script src="js/main.js?v=29" defer></script>
 </body>
 </html>

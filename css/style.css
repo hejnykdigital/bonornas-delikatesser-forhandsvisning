@@ -846,3 +846,74 @@ p, li, dd, summary { text-wrap: pretty; }
 @media (max-width: 560px) { .contact.photo-section .contact-form { padding: 24px 18px; border-radius: 22px; } }
 .contact.photo-section .section-bg::after { background: linear-gradient(180deg, rgb(18 13 10 / 86%) 0%, rgb(18 13 10 / 80%) 50%, rgb(18 13 10 / 88%) 100%); }
 .contact.photo-section .section-bg img { object-position: 50% 50%; }
+
+/* ==========================================================================
+   Undersidor: helhöjds sidhuvud med bild, som på Nyk Digital
+   ========================================================================== */
+.page-hero.page-hero-photo {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: max(620px, 100svh);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: calc(var(--header-h) + 48px) 0 clamp(64px, 9vw, 112px);
+  text-align: left; border-bottom: 0; color: var(--ivory);
+}
+.page-hero-photo .hero-media img { animation: none; }
+.page-hero-content { width: min(1240px, 100% - 2 * var(--gutter)); }
+.page-hero-photo h1 { color: var(--ivory); max-width: 18ch; margin-bottom: .35em; }
+.page-hero-photo h1 em { color: #e6d3b1; }
+.page-hero-photo .page-lead { margin: 0; max-width: 40em; color: rgb(248 244 238 / 94%); font-weight: 400; text-wrap: pretty; text-shadow: 0 1px 3px rgb(0 0 0 / 50%); }
+.page-hero-photo h1 { text-shadow: 0 2px 4px rgb(0 0 0 / 35%), 0 0 40px rgb(0 0 0 / 35%); }
+
+.breadcrumb {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 1.6rem;
+  font-size: .74rem; font-weight: 400; letter-spacing: .26em; text-transform: uppercase; color: #e6d3b1;
+}
+.breadcrumb a { color: var(--ivory); text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgb(230 211 177 / 60%); }
+.breadcrumb a:hover { text-decoration-color: var(--ivory); }
+.breadcrumb span[aria-hidden] { opacity: .6; }
+
+.page-hero-photo .page-toc { justify-content: flex-start; gap: 14px 36px; margin-top: 40px; }
+.page-hero-photo .page-toc a {
+  display: inline-flex; align-items: center; gap: 10px; color: var(--ivory);
+  border-bottom-color: rgb(248 244 238 / 45%);
+}
+.page-hero-photo .page-toc a::after { content: "→"; letter-spacing: 0; transition: transform .4s var(--ease); }
+.page-hero-photo .page-toc a:hover { border-bottom-color: var(--ivory); }
+.page-hero-photo .page-toc a:hover::after { transform: translateX(4px); }
+
+/* Genomskinlig meny ovanpå bilden, som på startsidan */
+.page-sub .site-header:not(.is-scrolled):not(.menu-open) { background: transparent; color: var(--ivory); box-shadow: none; }
+
+/* ---------- Ljusa avsnitt direkt under det mörka sidhuvudet ---------- */
+.gifts.gifts-light { background: var(--ivory); color: var(--text); }
+.gifts-light h2 { color: var(--ink); }
+.gifts-light h2 em { color: var(--gold-text); }
+.gifts-light .gifts-copy > p { color: var(--muted); }
+.gifts-light .steps { border-top-color: var(--line); }
+.gifts-light .steps li { border-bottom-color: var(--line); }
+.gifts-light .step-index { color: var(--gold-text); }
+.gifts-light .steps strong { color: var(--ink); }
+.gifts-light .steps div { color: var(--muted); }
+.occasions { background: var(--linen); }
+
+.category-linen { background: var(--linen); }
+.category.category-linen { padding-top: var(--section-y); }
+.category-linen + .category { padding-top: var(--section-y); }
+
+.archive.archive-linen { background: var(--linen); }
+.archive-linen .archive-card { background: var(--ivory); }
+
+/* Ljus variant av vanliga frågor (kontaktsidan, efter det mörka formuläravsnittet) */
+.faq.faq-light { background: var(--ivory); color: var(--text); }
+.faq-light .section-head .label { color: var(--gold-text); }
+.faq-light .section-head h2 { color: var(--ink); }
+.faq-light .section-head > p:last-child { color: var(--muted); }
+.faq-light .section-head > p:last-child a { color: var(--ink); text-decoration-color: var(--gold); }
+.faq-light .faq-list { border-top-color: var(--line); }
+.faq-light details { border-bottom-color: var(--line); }
+.faq-light details[open] { background: var(--linen); }
+.faq-light summary { color: var(--ink); }
+.faq-light summary:hover { color: var(--gold-text); }
+.faq-light summary::before, .faq-light summary::after { background: var(--ink); }
+.faq-light details p { color: var(--muted); }
+.faq-light details p a { color: var(--ink); }
