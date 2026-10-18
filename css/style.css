@@ -796,3 +796,34 @@ p, li, dd, summary { text-wrap: pretty; }
 .menu-section.photo-section .menu-card { box-shadow: 0 40px 80px -30px rgb(0 0 0 / 65%); }
 .category-brown { background: var(--roast); }
 .category.category-dark { padding-top: var(--section-y); }
+
+/* ---------- Receptsidan: kontraster och fast bakgrundsbild ---------- */
+.recipe-dark { background: var(--ink); color: rgb(248 244 238 / 82%); }
+.recipe-dark .recipe-head .label, .recipe-dark .recipe-steps h3 + ol li::before { color: #d6bf97; }
+.recipe-dark .recipe-head h2, .recipe-dark .recipe-steps h3 { color: var(--ivory); }
+.recipe-dark .recipe-head h2 em { color: #e6d3b1; }
+.recipe-dark .recipe-head > p:not(.label) { color: rgb(248 244 238 / 80%); }
+.recipe-dark .recipe-meta { border-color: rgb(248 244 238 / 18%); }
+.recipe-dark .recipe-meta div + div { border-color: rgb(248 244 238 / 18%); }
+.recipe-dark .recipe-meta dt { color: #d6bf97; }
+.recipe-dark .recipe-meta dd { color: var(--ivory); }
+.recipe-dark .recipe-ingredients { border-radius: 24px; color: var(--text); }
+.recipe-dark .recipe-steps li { border-color: rgb(248 244 238 / 16%); color: rgb(248 244 238 / 86%); }
+.recipe-dark .recipe-steps li::before { color: #d6bf97; }
+.recipe-dark .recipe-tip { border-radius: 18px; color: var(--text); }
+
+.archive.archive-light { background: var(--ivory); color: var(--text); }
+.archive-light .section-head .label { color: var(--gold-text); }
+.archive-light .section-head h2 { color: var(--ink); }
+.archive-light .section-head > p:last-child { color: var(--muted); }
+.archive-light .archive-card { background: var(--linen); border-top: 0; border-radius: 24px; }
+
+.tips.photo-section .section-head .label { color: #d6bf97; }
+.tips.photo-section .tip h3 { color: var(--ivory); }
+.tips.photo-section .item-index { color: #d6bf97; }
+.tips.photo-section .tip-list li, .tips.photo-section .brew-list div, .tips.photo-section .tip-foot { border-top-color: rgb(248 244 238 / 20%); }
+.tips.photo-section .tip-list li { color: rgb(248 244 238 / 86%); }
+.tips.photo-section .brew-list dt { color: var(--ivory); }
+.tips.photo-section .brew-list dd { color: rgb(248 244 238 / 72%); }
+.tips.photo-section .tip-foot { color: #e6d3b1; }
+.tips.photo-section .section-bg::after { background: linear-gradient(180deg, rgb(18 13 10 / 88%) 0%, rgb(18 13 10 / 84%) 50%, rgb(18 13 10 / 90%) 100%); }
