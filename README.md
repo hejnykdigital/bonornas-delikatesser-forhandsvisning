@@ -30,7 +30,7 @@ index.html          Startsida: kort om allt, med tydliga vägar vidare
 om-oss.html         Butiken, Jessica och historien, leverantörer, bilder
 sortiment.html      Ostar, te och kaffe, choklad och lakrits, skafferi, ostpåsar
 presentkorgar.html  Så går det till, tillfällen, frågor om presenter
-recept.html         Månadens recept, receptarkiv och tips
+recept.html         Månadens recept och receptarkiv
 kontakt.html        Hitta hit med karta, kontaktformulär, vanliga frågor
 404.html            Felsida
 css/style.css       All design
@@ -44,3 +44,9 @@ Länken `kontakt.html?amne=presentkorg` väljer automatiskt ämnet "Beställa en
 ## Efter ändringar i CSS eller JavaScript
 Servern sparar `css/style.css` och `js/main.js` i besökarnas webbläsare i en månad. Höj versionsnumret
 (`?v=2` till `?v=3` och så vidare) i alla HTML-filer när du ändrar dem, så att besökarna får den nya versionen direkt.
+
+## Lägga till ett nytt recept
+1. I `recept.html`, kopiera ett `<article class="archive-card">` i receptarkivet och lägg det först.
+2. Byt kategori, rubrik, beskrivning och länk till inlägget på Instagram.
+3. Vill du byta månadens recept: flytta det gamla till arkivet och ersätt innehållet i avsnittet `#manadens-recept`
+   (ingredienser, steg och den strukturerade receptdatan i `<head>`).
