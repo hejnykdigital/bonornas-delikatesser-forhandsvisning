@@ -5,20 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sidan hittades inte | Bönornas Delikatesser</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1d1612">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=30">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=Jost:wght@300..500&amp;display=swap" rel="stylesheet">
+  <style>
+    /* Fristående stil, så att sidan ser rätt ut oavsett var den visas ifrån */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100dvh;
+      display: grid; place-items: center; padding: 48px 20px;
+      background: #f0e9df; color: #2b221d; text-align: center;
+      font: 350 1.0625rem/1.75 "Jost", system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 560px; }
+    .brand { display: grid; justify-items: center; width: max-content; margin: 0 auto 56px; color: #1d1612; text-decoration: none; line-height: 1; }
+    .brand-name { font: 400 2rem/1 "Cormorant Garamond", Georgia, serif; letter-spacing: .04em; }
+    .brand-sub { margin-top: 6px; font-size: .64rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; opacity: .75; }
+    .label { display: flex; justify-content: center; align-items: center; gap: 14px; margin: 0 0 1.4rem; font-size: .72rem; font-weight: 400; letter-spacing: .32em; text-transform: uppercase; color: #735630; }
+    .label::before, .label::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+    h1 { margin: 0 0 .5em; font: 300 clamp(2.4rem, 1.6rem + 3.4vw, 3.8rem)/1.05 "Cormorant Garamond", Georgia, serif; color: #1d1612; text-wrap: balance; }
+    h1 em { font-style: italic; color: #735630; }
+    p { margin: 0 auto 2.4rem; max-width: 30em; color: #64574d; text-wrap: balance; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px;
+      font: 400 .76rem/1 "Jost", system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; text-decoration: none;
+      color: #f8f4ee; background: #1d1612; border: 1px solid #1d1612; transition: background-color .4s, color .4s;
+    }
+    .btn:hover { background: transparent; color: #1d1612; }
+    .btn-outline { background: transparent; color: #1d1612; border-color: rgb(29 22 18 / 45%); }
+    .btn-outline:hover { background: #1d1612; color: #f8f4ee; }
+    :focus-visible { outline: 1px solid #b3925f; outline-offset: 4px; }
+  </style>
 </head>
 <body>
-  <main class="section" style="min-height:100dvh;display:grid;place-items:center;text-align:center;background:var(--linen)">
-    <div class="container" style="max-width:560px">
-      <p class="label" style="justify-content:center">Sidan finns inte</p>
-      <h1>Den här sidan verkar ha tagit slut</h1>
-      <p style="color:var(--muted);max-width:30em;margin-inline:auto">Precis som våra populäraste praliner ibland gör. Men det finns mycket mer att upptäcka!</p>
-      <p style="margin-top:28px"><a class="btn" href="/">Till startsidan</a></p>
+  <main>
+    <a class="brand" href="/" data-home>
+      <span class="brand-name">Bönornas</span>
+      <span class="brand-sub">Te · Kaffe · Delikatesser</span>
+    </a>
+    <p class="label">Sidan finns inte</p>
+    <h1>Den här sidan verkar ha <em>tagit slut</em></h1>
+    <p>Precis som våra populäraste praliner ibland gör. Men det finns mycket mer att upptäcka hos oss!</p>
+    <div class="actions">
+      <a class="btn" href="/" data-home>Till startsidan</a>
+      <a class="btn btn-outline" href="/sortiment.html" data-home="sortiment.html">Se sortimentet</a>
     </div>
   </main>
+  <script>
+    // Länkarna fungerar både på den riktiga domänen och på en förhandsadress i en undermapp
+    (function () {
+      var base = location.pathname.indexOf('/bonornas-delikatesser-forhandsvisning/') === 0 ? '/bonornas-delikatesser-forhandsvisning/' : '/';
+      document.querySelectorAll('[data-home]').forEach(function (a) { a.href = base + (a.getAttribute('data-home') || ''); });
+    })();
+  </script>
 </body>
 </html>
